@@ -7,5 +7,6 @@ app.get("/",function(req,res){
 	res.send('Hello Bro!!!\n');
 })
 
-app.listen(port)
-console.log("server is running at port " + port)
+app.listen(port,ipaddr, function(){
+  console.log("server listening on %d in %s mode", port, app.settings.env);
+});
