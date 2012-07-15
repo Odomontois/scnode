@@ -1,7 +1,11 @@
 var http = require('http');
+
+var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP || "127.0.0.1";
+var port    = process.env.OPENSHIFT_INTERNAL_PORT || 8080;
+
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hello World\n');
-}).listen(80, '127.0.0.1');
+}).listen(port, ipaddr);
 
-console.log('Server running at http://127.0.0.1:80/');
+console.log("Server running at http://" + ipaddr + ":" + port + "/");
