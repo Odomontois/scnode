@@ -1,0 +1,5 @@
+body { background-color:lightgrey ;}
+table,th,td { 
+	border-radius: 20px;
+	background-color: white 
+}
